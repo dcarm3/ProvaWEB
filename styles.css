@@ -1,0 +1,218 @@
+/*
+COISAS PARA ARRUMAR SE DER TEMPO:
+
+- pedir ajuda pra alguem pra fazer alguns códigos relacionado ao filtro
+- posição botões com position absolute
+- filtros de quantidade nao funcionando
+- ajustar centralização do numero das paginas
+- descobrir como arruma a cor de fundo
+
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+
+header {
+  background-color: #4682b4;
+  color: white;
+  position: relative;
+  padding: 21px;
+}
+
+main {
+  background-color: #f0f0f0;
+  max-width: 100ch;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+footer {
+  background-color: #4682b4;
+  color: white;
+  padding: 17px;
+}
+
+ul {
+  list-style: none;
+}
+
+#searchNoticia {
+    padding: 11px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 605px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#buttonSearchNoticia {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  position: absolute;
+  right: 450px;
+  top: 5%;
+}
+
+#svgFiltro {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+#circuloFiltro {
+  background-color: #f0f0f0;
+  color: #4682b4;
+  width: 15px;
+  height: 15px;
+  font-size: 10px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+#dialogFiltro {
+  width: 90vw;
+  max-width: 400px;
+}
+
+#dialogFiltro form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 20px;
+}
+
+#cabecalhoDialog {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#closeDialog {
+  cursor: pointer;
+}
+
+#main {
+  margin-top: 20px;
+}
+
+.cardNoticia {
+  display: flex;
+  border-bottom: 2px solid rgba(0, 0, 
+  0, 0, 0, 0.1);
+  padding: 20px 0;
+}
+
+.imagemNoticia {
+  width: 30%;
+  height: auto;
+  object-fit: cover;
+}
+
+.botaoNoticia {
+  background: #4682b4;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 10px;
+  color: #fff;
+  border: none;
+}
+
+#pag {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagina {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #4682b4;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  text-align: center;
+  color: #4682b4;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pagina:hover {
+  background-color: #4682b4;
+  color: #fff;
+}
+
+.paginaAtiva {
+  background-color: #4682b4;
+  color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+    padding: 10px;
+  }
+
+  main {
+    padding: 20px 10px;
+  }
+
+  .flexColumn {
+    display: block;
+  }
+
+  .imagemNoticia {
+    width: 100%;
+  }
+
+  #searchNoticia {
+    width: calc(100% - 50px);
+  }
+
+  #buttonSearchNoticia {
+    right: 5px;
+  }
+
+  #svgFiltro {
+    right: 10px;
+  }
+
+  #circuloFiltro {
+    bottom: 0;
+    right: 0;
+  }
+
+  #dialogFiltro {
+    width: 90%;
+    max-width: 100%;
+  }
+
+  #dialogFiltro form {
+    grid-template-columns: 1fr;
+  }
+
+  #pag {
+    flex-wrap: wrap;
+  }
+}

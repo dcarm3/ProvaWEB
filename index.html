@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>noticias</title>
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+    <h1>Portal de Notícias do IBGE</h1>
+    <div class="flex centerColumnRow">
+    <form class="relative" onsubmit="search(event)">
+    <input type="text" id="searchNoticia" placeholder="Buscar notícia por algum termo...">
+    <button type="submit" id="buttonSearchNoticia">🔍</button>
+    </form>
+
+        <div id="svgFiltro" class="centerAll">
+        <svg width="20" height="20" fill="#f0f0f0" viewBox="0 0 80 90" focusable="false"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="m 0,0 30,45 0,30 10,15 0,-45 30,-45 Z"></path>
+        </svg>
+        <div id="circuloFiltro" class="flex centerAll"></div>
+        </div>
+
+        </div>
+        <dialog id="dialogFiltro">
+        <div id="cabecalhoDialog">
+        <span id="closeDialog">X</span>
+        </div>
+        <form onsubmit="aplicarFiltro(event)">
+        <div class="flexColumn">
+        <label for="filtroTipo">Tipo:</label>
+        <select id="filtroTipo">
+        <option value="">Selecione um tipo</option>
+        <option value="noticia">Notícia</option>
+        <option value="release">Release</option>
+        </select>
+        </div>
+        <div class="flexColumn">
+        <label for="filtroQuantidade">Quantidade:</label>
+        <select id="filtroQuantidade">
+        <option value="5">05</option>
+        <option selected value="10">10</option>
+        <option value="20">20</option>
+        </select>
+        </div>
+        <div class="flexColumn">
+        <label for="filtroDe">De:</label>
+        <input type="date" id="filtroDe">
+        
+        </div>
+          <div class="flexColumn">
+          <label for="filtroAte">Até:</label>
+          <input type="date" id="filtroAte">
+        </div>
+          <button type="submit" id="botaoFiltro">Aplicar</button>
+        </form>
+      </dialog>
+    </div>
+  </header>
+
+  <main>
+    <ul id="main"></ul>
+    <ul id="pag"></ul>
+  </main>
+
+<footer>
+<span> &copy; Prova do segundo bimestre - Programação WEB</span>
+</footer>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
